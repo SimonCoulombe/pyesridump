@@ -71,6 +71,10 @@ def _parse_args(args):
         type=int,
         default=30,
         help="HTTP timeout in seconds, default 30")
+    parser.add_argument("-s", "--start_with",
+        type=int,
+        default=0,
+        help="start_with which row, default 0")
     parser.add_argument("--paginate-oid",
         dest='paginate_oid',
         action='store_true',
@@ -100,6 +104,7 @@ def main():
         request_geometry=args.request_geometry,
         proxy=args.proxy,
         timeout=args.timeout,
+        start_with=args.start_with,
         parent_logger=logger,
         paginate_oid=args.paginate_oid)
 
